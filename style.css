@@ -1,0 +1,450 @@
+    :root {
+        --primary-color: #1a1a1a;
+        --secondary-color: #4b4b4b;
+        --accent-color: #10a37f;
+        --text-color: #1a1a1a;
+        --light-gray: #f9f9f9;
+        --white: #ffffff;
+        --shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        --border-radius: 12px;
+        --transition: all 0.2s ease-in-out;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+        line-height: 1.5;
+        color: #1C2431;
+        background-color: #F2F6FC;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .site-header {
+        background: #F2F6FC;
+        color: #1C2431;
+        padding: 1.5rem 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(150, 170, 200, 0.2);
+    }
+
+    .site-title {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+    }
+
+    .site-subtitle {
+        font-size: 1.1rem;
+        opacity: 0.8;
+        font-weight: 400;
+    }
+
+    .main-nav {
+        background-color: #F2F6FC;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .nav-list {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-item {
+        margin: 0 0.5rem;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 1rem 1.5rem;
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 500;
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+    }
+
+    .nav-link:hover, 
+    .nav-link.active {
+        color: #4FB1F7;
+        background: rgba(79, 177, 247, 0.1);
+        box-shadow: 0 2px 4px rgba(150, 170, 200, 0.2);
+    }
+
+    main {
+        padding: 2rem 0;
+    }
+
+    .hero-section {
+        text-align: center;
+        margin: 3rem 0;
+        padding: 2rem;
+        background: var(--light-gray);
+        border-radius: var(--border-radius);
+        background-image: url('../images/campus-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+        color: var(--secondary-color);
+        max-width: 600px;
+        margin: 0 auto 2rem;
+    }
+
+    .voice-assistant-card {
+        background-color: #E6EEF8;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 2rem auto;
+        max-width: 600px;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .mic-button {
+        background-color: #4FB1F7;
+        border: none;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        cursor: pointer;
+        transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .mic-button.listening {
+        background-color: #F7CB4F;
+        box-shadow: 0 0 10px rgba(247, 203, 79, 0.5);
+    }
+
+    .mic-button:hover {
+        transform: scale(1.05);
+        background-color: #0d8a6d;
+    }
+
+    .mic-button svg {
+        fill: var(--white);
+        width: 40px;
+        height: 40px;
+    }
+
+    .voice-prompt {
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        color: var(--secondary-color);
+    }
+
+    .suggestion-box {
+        background: rgba(16, 163, 127, 0.05);
+        padding: 1.2rem;
+        border-radius: var(--border-radius);
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--accent-color);
+    }
+
+    .suggestion-title {
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+    }
+
+    .suggestion-list {
+        list-style-position: inside;
+        padding-left: 0;
+    }
+
+    .suggestion-list li {
+        margin-bottom: 0.5rem;
+        color: var(--secondary-color);
+    }
+
+    .voice-result-box {
+        min-height: 50px;
+        padding: 1rem;
+        background-color: var(--light-gray);
+        border-radius: var(--border-radius);
+        margin-top: 1rem;
+        font-family: monospace;
+    }
+
+    .place-card,
+    .course-card {
+        background-color: var(--white);
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: var(--shadow);
+    }
+
+    .courses-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .course-card {
+        transition: var(--transition);
+        height: 100%;
+    }
+
+    .course-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .place-card h4 {
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .place-card p {
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-card {
+        background-color: var(--white);
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: var(--shadow);
+    }
+
+    .contact-card h4 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .contact-card.emergency {
+        border-left: 4px solid #ff3a3a;
+    }
+
+    .contact-card p {
+        margin-bottom: 0.5rem;
+    }
+
+    .facility-list {
+        list-style: none;
+    }
+
+    .facility-list li {
+        background-color: var(--white);
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        box-shadow: var(--shadow);
+    }
+
+    .facility-list h4 {
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .site-footer {
+        background-color: #E6EEF8;
+        padding: 1.5rem 0;
+        text-align: center;
+        margin-top: 3rem;
+        border-top: 1px solid #D0D8E8;
+    }
+
+    .site-footer .copyright {
+        color: #5F6B7D;
+    }
+
+    .site-footer .team-credit {
+        color: #5F6B7D;
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+    }
+
+    .copyright {
+        color: var(--secondary-color);
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+        .nav-list {
+            flex-direction: column;
+            align-items: center;
+            display: none; /* Hide nav by default for hamburger menu */
+            width: 100%;
+            background-color: var(--light-gray);
+            position: absolute;
+            top: 60px;
+            left: 0;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            z-index: 200;
+        }
+
+        .nav-list.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .nav-item {
+            margin: 0.5rem 0;
+        }
+
+        .hero-title {
+            font-size: 1.5rem;
+        }
+
+        .voice-assistant-card {
+            padding: 1.5rem;
+        }
+
+        /* Hamburger menu button */
+        .hamburger {
+            display: block;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            z-index: 300;
+        }
+
+        .hamburger div {
+            background-color: var(--primary-color);
+            height: 3px;
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Center align main content */
+        main, .container, .hero-section, .voice-assistant-card, .place-card, .course-card, .contact-card {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        /* Reduce padding and margins */
+        main {
+            padding: 1rem 0;
+        }
+
+        .container {
+            width: 95%;
+            padding: 0 10px;
+        }
+
+        .hero-section {
+            margin: 2rem 0;
+            padding: 1rem;
+        }
+
+        .voice-assistant-card {
+            margin: 1rem auto;
+            padding: 1rem;
+        }
+
+        .place-card,
+        .course-card,
+        .contact-card {
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Collapsible text container */
+        .collapsible-text {
+            max-height: 4.5em; /* approx 3 lines */
+            overflow: hidden;
+            position: relative;
+            transition: max-height 0.3s ease;
+        }
+
+        .collapsible-text.expanded {
+            max-height: 1000px; /* large enough to show full text */
+        }
+
+        /* Add fade effect at bottom of collapsed text */
+        .collapsible-text::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1.5em;
+            background: linear-gradient(to bottom, rgba(255,255,255,0), var(--light-gray));
+            pointer-events: none;
+        }
+
+        .collapsible-text.expanded::after {
+            display: none;
+        }
+    }
+
+    /* Feedback form spacing and placeholder styles */
+    .feedback-form label {
+        display: block;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+
+    .feedback-form select,
+    .feedback-form textarea,
+    .feedback-form input[type="text"],
+    .feedback-form input[type="email"] {
+        display: block;
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        margin-bottom: 1rem;
+    }
+
+    .feedback-form textarea.small-placeholder::placeholder {
+        font-size: 0.85rem;
+        color: #666;
+    }
+
+    .feedback-form textarea.small-placeholder {
+        resize: vertical;
+        min-height: 60px;
+    }

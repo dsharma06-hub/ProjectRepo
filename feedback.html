@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - University Navigator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">Feedback</h1>
+            <p class="site-subtitle">We value your feedback!</p>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <div class="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="campus.html" class="nav-link">Campus</a></li>
+                <li class="nav-item"><a href="places.html" class="nav-link">Places</a></li>
+                <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+                <li class="nav-item"><a href="contacts.html" class="nav-link">Contacts</a></li>
+                <li class="nav-item"><a href="feedback.html" class="nav-link active">Feedback</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <form id="feedbackForm" class="feedback-form">
+                <label for="satisfaction">Overall Satisfaction:</label>
+                <select id="satisfaction" name="satisfaction" required>
+                    <option value="">Select...</option>
+                    <option value="very_satisfied">Very Satisfied</option>
+                    <option value="satisfied">Satisfied</option>
+                    <option value="neutral">Neutral</option>
+                    <option value="dissatisfied">Dissatisfied</option>
+                    <option value="very_dissatisfied">Very Dissatisfied</option>
+                </select>
+
+                <label for="improvement">Specific Areas for Improvement:</label>
+                <textarea id="improvement" name="improvement" rows="3" placeholder="Please specify..." class="small-placeholder"></textarea>
+
+                <label for="comments">Additional Comments/Suggestions:</label>
+                <textarea id="comments" name="comments" rows="3" placeholder="Your comments..." class="small-placeholder"></textarea>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your name...">
+
+                <label for="email">Email (optional):</label>
+                <input type="email" id="email" name="email" placeholder="Your email...">
+
+                <input type="hidden" id="feedbackDate" name="feedbackDate" value="">
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="copyright">&copy; 2025 Karnavati University Navigator</p>
+            <p class="team-credit">BY - TEAM ROCKET</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('feedbackDate').value = new Date().toISOString().split('T')[0];
+            alert('Feedback submitted! Thank you for your input.');
+            this.reset();
+        });
+    </script>
+    <script src="main.js"></script>
+    <script src="voice.js"></script>
+</body>
+</html>

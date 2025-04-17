@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Navigator - Karnavati University</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">University Navigator</h1>
+            <p class="site-subtitle">Voice-assisted navigation for Karnavati University</p>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <div class="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="campus.html" class="nav-link">Campus</a></li>
+                <li class="nav-item"><a href="places.html" class="nav-link">Places</a></li>
+                <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+                <li class="nav-item"><a href="contacts.html" class="nav-link">Contacts</a></li>
+                <li class="nav-item"><a href="feedback.html" class="nav-link">Feedback</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="hero-section">
+                <h2 class="hero-title">Welcome to Karnavati University</h2>
+                <p class="hero-description collapsible-text">Use voice commands to navigate our campus with ease.</p>
+                
+                <div class="voice-assistant-card">
+                    <button id="micButton" class="mic-button">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z" />
+                    </svg>
+                </button>
+                    <p class="voice-prompt">Click the microphone to begin</p>
+                    <div class="suggestion-box" id="suggestionBox">
+                        <p class="suggestion-title">Try saying:</p>
+                        <ul class="suggestion-list">
+                        <li>"Where is UIT?"</li>
+                        <li>"How do I get to the KU Main Office?"</li>
+                        <li>"Show me the nearest cafeteria"</li>
+                    </ul>
+                </div>
+                    <div id="voiceResult" class="voice-result-box"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="copyright">&copy; 2025 Karnavati University Navigator</p>
+            <p class="team-credit">BY - TEAM ROCKET</p>
+        </div>
+    </footer>
+
+    <script src="voice.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
